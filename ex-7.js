@@ -42,7 +42,15 @@ let orders = [
 ];
 
 // Start coding here
-let isArray;
-let creditCardTypeOfBlindermann;
-let productQuantityOfJoannet;
-let totalPurchaseOfDary;
+let isArray = Array.isArray(orders);
+let creditCardTypeOfBlindermann = orders[2].creditCardType;
+orders[2].creditCardType = "visa";
+let productQuantityOfJoannet = orders[3].productQuantity;
+let totalPurchaseOfDary = orders[1].productPrice * orders[1].productQuantity;
+orders.shift();
+
+console.log(isArray);                     // true
+console.log(creditCardTypeOfBlindermann); // "switch"
+console.log(productQuantityOfJoannet);    // 96
+console.log(totalPurchaseOfDary);         // 934902
+console.log(orders);                      // เหลือ 4 รายการ (id 2-5) และ Blindermann เป็น "visa"
